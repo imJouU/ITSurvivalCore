@@ -1,0 +1,292 @@
+no-permission: "&cYou don't have permissions to execute this command."
+player-not-online: "&cThis player is not online."
+#############
+#  Modules  #
+#############
+modules:
+  teleport:
+    subcommands:
+      accept: false
+      deny: false
+      toggle:
+        status-enabled: "&eYour &brequest receipt status &ehas been &aenabled&e."
+        status-disabled: "&eYour &brequest receipt status &ehas been &cdisabled&e."
+      blacklist:
+        add:
+          no-args:
+            - "&cSome arguments are missing!"
+            - "&aCommand usage: &e/teleport blacklist add &b(player)"
+          target-same-player: "&cYou can not add yourself to your blacklist."
+          already-on-list: "&cThis player is already on your blacklist."
+          adding: "&8Adding player..."
+          success: "&a{name} has been added to your blacklist!"
+        remove:
+          no-args:
+            - "&cSome arguments are missing!"
+            - "&aCommand usage: &e/teleport blacklist remove &b(player)"
+          target-same-player: "&cYou can not remove yourself from your blacklist."
+          not-on-list: "&cThis player is not on your blacklist."
+          removing: "&8Removing player..."
+          success: "&a{name} has been removed from your blacklist!"
+        list:
+          no-args:
+            - "&cSome arguments are missing!"
+            - "&aCommand usage: &e/teleport blacklist list &b(player)"
+          looking: "&8Looking for information..."
+          no-players-found: "&cNo players found!"
+          success:
+            - "&b&m-----------------------------------------------------&r"
+            - " &aPlayers: &e({amount})"
+            - ""
+            - " &e{id}. &b{name}"
+            - "&b&m-----------------------------------------------------&r"
+      whitelist:
+        add:
+          no-args:
+            - "&cSome arguments are missing!"
+            - "&aCommand usage: &e/teleport whitelist add &b(player)"
+          target-same-player: "&cYou can not add yourself to your whitelist."
+          already-on-list: "&cThis player is already on your whitelist."
+          adding: "&8Adding player..."
+          success: "&a{name} has been added to your whitelist!"
+        remove:
+          no-args:
+            - "&cSome arguments are missing!"
+            - "&aCommand usage: &e/teleport whitelist remove &b(player)"
+          target-same-player: "&cYou can not remove yourself from your whitelist."
+          not-on-list: "&cThis player is not on your whitelist."
+          removing: "&8Removing player..."
+          success: "&a{name} has been removed from your whitelist!"
+        list:
+          no-args:
+            - "&cSome arguments are missing!"
+            - "&aCommand usage: &e/teleport whitelist list &b(player)"
+          looking: "&8Looking for information..."
+          no-players-found: "&cNo players found!"
+          success:
+            - "&b&m-----------------------------------------------------&r"
+            - " &aPlayers: &e({amount})"
+            - ""
+            - " &e{id}. &b{name}"
+            - "&b&m-----------------------------------------------------&r"
+    player-available-commands:
+      - "&b&m-----------------------------------------------------&r"
+      - " &f&lTELEPORT MODULE"
+      - " &aAvailable commands:"
+      - ""
+      - " &e/teleport &b(player) &7- &b... ???"
+      - " &e/teleport accept &b(player) &7- &b... ???"
+      - " &e/teleport deny &b(player) &7- &b... ???"
+      - " &e/teleport toggle &7- &b... ???"
+      - " &e/teleport blacklist add &b(player) &7- &b... ???"
+      - " &e/teleport blacklist remove &b(player) &7- &b... ???"
+      - " &e/teleport blacklist list &7- &b... ???"
+      - " &e/teleport whitelist add &b(player) &7- &b... ???"
+      - " &e/teleport whitelist remove &b(player) &7- &b... ???"
+      - " &e/teleport whitelist list &7- &b... ???"
+      - "&b&m-----------------------------------------------------&r"
+    admin-available-commands:
+      - "&b&m-----------------------------------------------------&r"
+      - " &f&lTELEPORT MODULE"
+      - " &aAvailable commands:"
+      - ""
+      - " &e/teleport &b(player) &7- &b... ???"
+      - " &e/teleport accept &b(player) &7- &b... ???"
+      - " &e/teleport deny &b(player) &7- &b... ???"
+      - " &e/teleport toggle &7- &b... ???"
+      - " &e/teleport blacklist add &b(player) &7- &b... ???"
+      - " &e/teleport blacklist remove &b(player) &7- &b... ???"
+      - " &e/teleport blacklist list &7- &b... ???"
+      - " &e/teleport blacklist list &b(player) &7- &b... ???"
+      - " &e/teleport whitelist add &b(player) &7- &b... ???"
+      - " &e/teleport whitelist remove &b(player) &7- &b... ???"
+      - " &e/teleport whitelist list &7- &b... ???"
+      - " &e/teleport whitelist list &b(player) &7- &b... ???"
+      - "&b&m-----------------------------------------------------&r"
+    console-available-commands:
+      - "&b&m-----------------------------------------------------&r"
+      - " &f&lTELEPORT MODULE"
+      - " &aAvailable commands:"
+      - ""
+      - " &e/teleport blacklist list &b(player) &7- &b... ???"
+      - " &e/teleport whitelist list &b(player) &7- &b... ???"
+      - "&b&m-----------------------------------------------------&r"
+  quest-system:
+    commands:
+      level:
+        player-level: "&fYour level: &a{level}"
+        subcommands:
+          upgrade:
+            max-level-reached: "&cYou have reached the maximum level!"
+          set-level:
+            no-args:
+              - "&cSome arguments are missing!"
+              - "&aCommand usage: &e/questlevel setlevel &b(player) (level)"
+            invalid-level: "&cInvalid level specified."
+            level-less-than-or-equal: "&cLevel must be greater than 0."
+            level-greater-than-max-level: "&cThe specified level is greater than the maximum level allowed."
+            success:
+              target: "&aYour Quest Level is set to {level}."
+              requester: "&a{target} level has been set to {level}."
+          reset:
+            no-args:
+              - "&cSome arguments are missing!"
+              - "&aCommand usage: &e/questlevel reset &b(player)"
+            success:
+              target: "&aYour Quest Level has been reset."
+              requester: "&a{target} level has been reset."
+        player-available-commands:
+          - "&b&m-----------------------------------------------------&r"
+          - " &f&lQUEST SYSTEM MODULE"
+          - " &aAvailable commands:"
+          - ""
+          - " &e/questlevel &7- &bView your level."
+          - " &e/questlevel upgrade &7- &bUpgrade your level."
+          - "&b&m-----------------------------------------------------&r"
+        admin-available-commands:
+          - "&b&m-----------------------------------------------------&r"
+          - " &f&lQUEST SYSTEM MODULE"
+          - " &aAvailable commands:"
+          - ""
+          - " &e/questlevel &7- &bView your level."
+          - " &e/questlevel upgrade &7- &bUpgrade your level."
+          - " &e/questlevel setlevel &b(player) (level) &7- &bSets a level to the player."
+          - " &e/questlevel reset &b(player) &7- &bResets the player level."
+          - "&b&m-----------------------------------------------------&r"
+        console-available-commands:
+          - "&b&m-----------------------------------------------------&r"
+          - " &f&lQUEST SYSTEM MODULE"
+          - " &aAvailable commands:"
+          - ""
+          - " &e/questlevel setlevel &b(player) (level) &7- &bSets a level to the player."
+          - " &e/questlevel reset &b(player) &7- &bResets the player level."
+          - "&b&m-----------------------------------------------------&r"
+      points:
+        player-points: "&fYour points: &5{points}"
+        subcommands:
+          add-points:
+            no-args:
+              - "&cSome arguments are missing!"
+              - "&aCommand usage: &e/questpoints addpoints &b(player) (amount)"
+            invalid-amount: "&cInvalid amount specified."
+            amount-less-than-or-equal: "&cAmount must be greater than 0."
+            success:
+              target: " &8+&5{amount} Quest Points!"
+              requester: "&a{amount} Quest Points has been added to {target}."
+          rem-points:
+            no-args:
+              - "&cSome arguments are missing!"
+              - "&aCommand usage: &e/questpoints rempoints &b(player) (amount)"
+            invalid-amount: "&cInvalid amount specified."
+            amount-less-than-or-equal: "&cAmount must be greater than 0."
+            amount-greater-target-points: "&cThis amount is greater than the player points."
+            success:
+              target: " &8-&5{amount} Quest Points!"
+              requester: "&a{amount} Quest Points has been removed from {target}."
+          reset-points:
+            no-args:
+              - "&cSome arguments are missing!"
+              - "&aCommand usage: &e/questpoints reset &b(player)"
+            success:
+              target: "&cYour Quest Points have been reset."
+              requester: "&a{target} Quest Points have been reset."
+          set-points:
+            no-args:
+              - "&cSome arguments are missing!"
+              - "&aCommand usage: &e/questpoints setpoints &b(player) (amount)"
+            invalid-amount: "&cInvalid amount specified."
+            amount-less-than-or-equal: "&cAmount must be greater than 0."
+            success:
+              target: "&aYour Quest Points are set to {amount}."
+              requester: "&a{amount} Quest Points has been set for {target}."
+        player-available-commands:
+          - "&b&m-----------------------------------------------------&r"
+          - " &f&lQUEST SYSTEM MODULE"
+          - " &aAvailable commands:"
+          - ""
+          - " &e/questpoints &7- &bView your points."
+          - "&b&m-----------------------------------------------------&r"
+        admin-available-commands:
+          - "&b&m-----------------------------------------------------&r"
+          - " &f&lQUEST SYSTEM MODULE"
+          - " &aAvailable commands:"
+          - ""
+          - " &e/questpoints &7- &bView your points."
+          - " &e/questpoints addpoints &b(player) (amount) &7- &bAdd Quest Points to the player."
+          - " &e/questpoints rempoints &b(player) (amount) &7- &bRemoves an amount of Quest Points to the player."
+          - " &e/questpoints setpoints &b(player) (amount) &7- &bSets an amount of Quest Points to the player."
+          - " &e/questpoints reset &b(player) &7- &bResets the player Quest Points."
+          - "&b&m-----------------------------------------------------&r"
+        console-available-commands:
+          - "&b&m-----------------------------------------------------&r"
+          - " &f&lQUEST SYSTEM MODULE"
+          - " &aAvailable commands:"
+          - ""
+          - " &e/questpoints addpoints &b(player) (amount) &7- &bAdd Quest Points to the player."
+          - " &e/questpoints rempoints &b(player) (amount) &7- &bRemoves an amount of Quest Points to the player."
+          - " &e/questpoints setpoints &b(player) (amount) &7- &bSets an amount of Quest Points to the player."
+          - " &e/questpoints reset &b(player) &7- &bResets the player Quest Points."
+          - "&b&m-----------------------------------------------------&r"
+  warp:
+    warp-does-not-exist: "&cOops! This warp doesn't exist."
+    portal:
+      already-open: "&cThere is already an open portal to &e{name}&c."
+      creating: "&8Creating portal..."
+      opened: "The portal to &b{destination} &fhas been &aopened!"
+      close: "The portal to &b{destination} &fhas been &cclosed!"
+    subcommands:
+      set:
+        no-args:
+          - "&cSome arguments are missing!"
+          - "&aCommand usage: &e/warp set &b(warp) &7- &bCreate a new warp."
+        warp-already-exists: "&cThis warp already exists."
+        creating: "&8Creating warp..."
+      delete:
+        no-args:
+          - "&cSome arguments are missing!"
+          - "&aCommand usage: &e/warp delete &b(warp) &7- &bDelete a warp already created."
+        deleting: "&8Deleting warp..."
+      list:
+        warp-found:
+          - "&b&m-----------------------------------------------------&r"
+          - " &aList of warps:"
+          - ""
+          - " {name}"
+          - "&b&m-----------------------------------------------------&r"
+        warp-not-found: "&cNo locations have been found."
+      reload:
+        no-args:
+          - "&cSome arguments are missing!"
+          - "&aCommand usage: &e/warp reload &b(warp) &7- &bReload the warp configuration."
+        reloading: "&8Reloading warp..."
+    player-available-commands:
+      - "&b&m-----------------------------------------------------&r"
+      - " &f&lWARP MODULE"
+      - " &aAvailable commands:"
+      - ""
+      - " &e/warp &b(warp) &7- &bTeleport to warp."
+      - "&b&m-----------------------------------------------------&r"
+    admin-available-commands:
+      - "&b&m-----------------------------------------------------&r"
+      - " &f&lWARP MODULE"
+      - " &aAvailable commands:"
+      - ""
+      - " &e/warp &b(warp) &7- &bTeleport to warp."
+      - " &e/warp set &b(warp) &7- &bCreate a new warp."
+      - " &e/warp delete &b(warp) &7- &bDelete a warp already created."
+      - " &e/warp list &7- &bList of all warps created."
+      - " &e/warp reload &b(warp) &7- &bReload the warp configuration."
+      - "&b&m-----------------------------------------------------&r"
+    console-available-commands:
+      - "&b&m-----------------------------------------------------&r"
+      - " &f&lWARP MODULE"
+      - " &aAvailable commands:"
+      - ""
+      - " &e/warp list &7- &bList of all warps created."
+      - " &e/warp reload &b(warp) &7- &bReload the warp configuration."
+      - "&b&m-----------------------------------------------------&r"
+#
+#
+#
+console-messages:
+  command-not-available: "&cOops! This command is only available for players."

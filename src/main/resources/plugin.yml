@@ -1,0 +1,15 @@
+name: ITSurvivalCore
+version: '${project.version}'
+main: me.jouu.itsurvivalcore.ITSurvivalCore
+api-version: 1.19
+authors: [ jou ]
+description: :D
+commands:
+  score:
+    description: :D
+    aliases:
+      - prueba
+  teleport:
+    description: :D
+    aliases:
+      - tp

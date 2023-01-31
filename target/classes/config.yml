@@ -1,0 +1,118 @@
+################################################################################################################################################################
+##                                                                                                                                                            ##
+##   ______     __  __     ______     ______   ______     __    __        ______     __  __     ______     __   __   __     __   __   ______     __           ##
+##  /\  ___\   /\ \/\ \   /\  ___\   /\__  _\ /\  __ \   /\ "-./  \      /\  ___\   /\ \/\ \   /\  == \   /\ \ / /  /\ \   /\ \ / /  /\  __ \   /\ \          ##
+##  \ \ \____  \ \ \_\ \  \ \___  \  \/_/\ \/ \ \ \/\ \  \ \ \-./\ \     \ \___  \  \ \ \_\ \  \ \  __<   \ \ \'/   \ \ \  \ \ \'/   \ \  __ \  \ \ \____     ##
+##   \ \_____\  \ \_____\  \/\_____\    \ \_\  \ \_____\  \ \_\ \ \_\     \/\_____\  \ \_____\  \ \_\ \_\  \ \__|    \ \_\  \ \__|    \ \_\ \_\  \ \_____\    ##
+##    \/_____/   \/_____/   \/_____/     \/_/   \/_____/   \/_/  \/_/      \/_____/   \/_____/   \/_/ /_/   \/_/      \/_/   \/_/      \/_/\/_/   \/_____/    ##
+##                                                                                                                                                            ##
+##                                                    ______     ______     ______   __  __     ______                                                        ##
+##                                                   /\  ___\   /\  ___\   /\__  _\ /\ \/\ \   /\  == \                                                       ##
+##                                                   \ \___  \  \ \  __\   \/_/\ \/ \ \ \_\ \  \ \  _-/                                                       ##
+##                                                    \/\_____\  \ \_____\    \ \_\  \ \_____\  \ \_\                                                         ##
+##                                                     \/_____/   \/_____/     \/_/   \/_____/   \/_/                                                         ##
+##                                                                                                                                                            ##
+##                                                                                                                                                            ##
+##                                                                                                                                                            ##
+##  Setup version: 1.0                                                                                                                                        ##
+##  Changelogs: URL...                                                                                                                                        ##
+##                                                                                                                                                            ##
+##  This setup has been made by imJouU                                                                                                                        ##
+##                                                                                                                                                            ##
+##  Project: Astral                                                                                                                                           ##
+##  Development Team: iLuxiion Team                                                                                                                           ##
+##                                                                                                                                                            ##
+##  For any help or support you need you can join our official Discord server: https://discord.gg/...                                                         ##
+##                                                                                                                                                            ##
+################################################################################################################################################################
+
+language: "en_US"
+
+profile:
+  buyer-id: "imJouU"
+  private-key: ":D"
+
+storage:
+  # How the plugin should store data.
+  # Possible options:
+  #   - MySQL
+  #   - MariaDB
+  #   - MongoDB   Available SOON!
+  type: "MySQL"
+  settings:
+    address: "address"
+    database: "database"
+    username: "username"
+    password: "password"
+
+######################################################################################################################################
+##                                                                                                                                  ##
+## Enable or disable custom modules for the server.                                                                                 ##
+##                                                                                                                                  ##
+## These modules enhance the gameplay experience, some modules are optional, so you can disable them and use your own preference.   ##
+## Please note that these modules have been created for this server and the experience it offers.                                   ##
+##                                                                                                                                  ##
+######################################################################################################################################
+modules:
+  # levelled worlds is used to deny or allow entry to players depending always on the level needed in each world.
+  # There are several types of levels in which it can be configured:
+  #   - COMBAT
+  #   - ???
+  #   - ???
+  # These types are taken from the player's statistics.
+  # Useful commands:
+  #   /levelledworlds list
+  #   /levelledworlds set <world> <type> <level>
+  levelled-worlds:
+    enabled: false
+    settings:
+      worlds:
+        "Kirjour Hillside":
+          type: "COMBAT"
+          level: 15
+        "Ashrial Volcano":
+          type: "COMBAT"
+          level: 30
+  # The Quest System has two built-in features: levels and points.
+  # These are used to reward the player for completing their missions allowing them to level up for better rewards.
+  # Useful commands: /questlevel upgrade - /questlevel setlevel - /questlevel resetlevel - /questlevel
+  # Useful commands: /questpoints addpoints - /questpoints setpoints - /questpoints rempoints - /questpoints resetpoints - /questpoints
+  quest-system:
+    enabled: true
+    settings:
+      levels:
+        # Default level at which all players will start.
+        default-level: 1
+        # The maximum level that players will have to level up and to generate the levels with their necessary points.
+        max-level: 3
+        # This formula creates internally the levels and their necessary points.
+        # You can change it but keep in mind that if you don't know what you are doing you can generate errors in the creation of the levels.
+        # If you need help you can join our discord server.
+        xp-formula: "1000 * (LEVEL * (1.5 ^ 2))"
+        # Level | Points | Formula
+        #   1      2250    1000 * (1 * (1.5 ^ 2))
+        #   2      4500    1000 * (2 * (1.5 ^ 2))
+        #   3      6750    1000 * (2 * (1.5 ^ 2))
+        # ... The number of levels generated will depend on the maximum level.
+  # Teleport is used to send a teleport request to another player.
+  # Useful commands: /teleport accept - /teleport deny - /teleport ...
+  teleport:
+    enabled: true
+    settings:
+      # The time before the request is automatically cancelled if not accepted or rejected
+      # The time is in seconds!
+      request-time-before-cancelling: 30
+      # Waiting time to make the teleportation. To disable it you can set the time to 0
+      # The time is in seconds!
+      teleport-waiting-time: 3
+  # Warp is used to teleport the player across worlds or different locations.
+  # Useful commands: /warp set - /warp delete - /warp ...
+  warp:
+    enabled: true
+    settings:
+      portal:
+        active-time: 10
+  # Whisper is used to send a private message to another player.
+  # Useful commands: /message - /reply - /whisper ...
+  whisper:
+    enabled: false
